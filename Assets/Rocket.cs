@@ -22,6 +22,13 @@ public class Rocket : MonoBehaviour
 
     private void ProcessInput()
     {
+
+        Thrust();
+        Rotate();
+    }
+
+    private void Thrust()
+    {
         if (Input.GetKey(KeyCode.Space))
         {
             rigidBody.AddRelativeForce(Vector3.up);
@@ -34,7 +41,11 @@ public class Rocket : MonoBehaviour
         {
             thrusterAudio.Stop();
         }
+    }
 
+    private void Rotate()
+    {
+        rigidBody.freezeRotation = true;
         if (Input.GetKey(KeyCode.A) && !(Input.GetKey(KeyCode.D)))
         {
             transform.Rotate(Vector3.forward);
@@ -43,5 +54,6 @@ public class Rocket : MonoBehaviour
         {
             transform.Rotate(-Vector3.forward);
         }
+        rigidBody.freezeRotation = false;
     }
 }
