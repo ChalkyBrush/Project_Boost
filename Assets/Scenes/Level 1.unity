@@ -291,15 +291,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1652142752882573876, guid: 13840e10cf808c948869eb42466937c7,
+    - target: {fileID: 1652142752882573877, guid: 13840e10cf808c948869eb42466937c7,
         type: 3}
-      propertyPath: m_Constraints
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 1652142752882573876, guid: 13840e10cf808c948869eb42466937c7,
-        type: 3}
-      propertyPath: m_Drag
-      value: 0.2
+      propertyPath: rcsThrust
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1652142752882573878, guid: 13840e10cf808c948869eb42466937c7,
         type: 3}
@@ -360,31 +355,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.59000003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5789734890960788658, guid: 13840e10cf808c948869eb42466937c7,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: d7c2d27b82fef204880d5ab86046ac15, type: 3}
-    - target: {fileID: 5789734890960788658, guid: 13840e10cf808c948869eb42466937c7,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.203
-      objectReference: {fileID: 0}
-    - target: {fileID: 5789734890960788658, guid: 13840e10cf808c948869eb42466937c7,
-        type: 3}
-      propertyPath: Priority
-      value: 83
-      objectReference: {fileID: 0}
-    - target: {fileID: 5789734890960788658, guid: 13840e10cf808c948869eb42466937c7,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5789734890960788658, guid: 13840e10cf808c948869eb42466937c7,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13840e10cf808c948869eb42466937c7, type: 3}
