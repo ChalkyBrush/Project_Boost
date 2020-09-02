@@ -1140,6 +1140,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1652142752882573877, guid: 13840e10cf808c948869eb42466937c7,
+        type: 3}
+      propertyPath: rocketThrustParticle
+      value: 
+      objectReference: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
+        type: 3}
+    - target: {fileID: 1652142752882573877, guid: 13840e10cf808c948869eb42466937c7,
+        type: 3}
+      propertyPath: deathParticle
+      value: 
+      objectReference: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0,
+        type: 3}
+    - target: {fileID: 1652142752882573877, guid: 13840e10cf808c948869eb42466937c7,
+        type: 3}
+      propertyPath: successParticle
+      value: 
+      objectReference: {fileID: 198631066050499358, guid: 62198a3a5dbb64a4f9e1618929224faa,
+        type: 3}
     - target: {fileID: 1652142752882573878, guid: 13840e10cf808c948869eb42466937c7,
         type: 3}
       propertyPath: m_Name

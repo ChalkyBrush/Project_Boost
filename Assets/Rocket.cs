@@ -7,6 +7,14 @@ public class Rocket : MonoBehaviour
 {
     [SerializeField] float rcsThrust = 175f;
     [SerializeField] float primaryThrust = 15f;
+    [SerializeField] AudioClip mainEngineSound = null;
+    [SerializeField] AudioClip deathSound = null;
+    [SerializeField] AudioClip deathSoundHighlight = null;
+    [SerializeField] AudioClip winSound = null;
+
+    [SerializeField] ParticleSystem rocketThrustParticle = null;
+    [SerializeField] ParticleSystem successParticle = null;
+    [SerializeField] ParticleSystem deathParticle = null;
 
     Rigidbody rigidBody;
     AudioSource thrusterAudio;
@@ -40,16 +48,23 @@ public class Rocket : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rigidBody.AddRelativeForce(Vector3.up * primaryThrust);
-            if (!thrusterAudio.isPlaying)
-            {
-                thrusterAudio.Play();
-            }
+            ApplyThrust();
         }
         else
         {
             thrusterAudio.Stop();
+            rocketThrustParticle.Stop();
         }
+    }
+
+    private void ApplyThrust()
+    {
+        rigidBody.AddRelativeForce(Vector3.up * primaryThrust);
+        if (!thrusterAudio.isPlaying)
+        {
+            thrusterAudio.PlayOneShot(mainEngineSound);
+        }
+        rocketThrustParticle.Play();
     }
 
     private void Rotate()
@@ -81,13 +96,30 @@ public class Rocket : MonoBehaviour
                 break;
             case "Finish":
                 state = State.Transcending;
-                Invoke("LoadNextLevel", 1f);
+                PlayWinEffects();
+                Invoke("LoadNextLevel", 1.5f);
                 break;
             default:
                 state = State.Dying;
-                Invoke("RestartLevel", 1f);
+                PlayDeathEffects();
+                Invoke("RestartLevel", 6f);
                 break;
         }
+    }
+
+    private void PlayDeathEffects()
+    {
+        thrusterAudio.Stop();
+        thrusterAudio.PlayOneShot(deathSound);
+        thrusterAudio.PlayOneShot(deathSoundHighlight);
+        deathParticle.Play();
+    }
+
+    private void PlayWinEffects()
+    {
+        thrusterAudio.Stop();
+        thrusterAudio.PlayOneShot(winSound);
+        successParticle.Play();
     }
 
     private void LoadNextLevel()
