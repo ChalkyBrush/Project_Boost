@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Rocket : MonoBehaviour
 {
     [SerializeField] float rcsThrust = 175f;
-    [SerializeField] float primaryThrust = 15f;
+    [SerializeField] float primaryThrust = 150f;
     [SerializeField] AudioClip mainEngineSound = null;
     [SerializeField] AudioClip deathSound = null;
     [SerializeField] AudioClip deathSoundHighlight = null;
@@ -59,7 +59,7 @@ public class Rocket : MonoBehaviour
 
     private void ApplyThrust()
     {
-        rigidBody.AddRelativeForce(Vector3.up * primaryThrust);
+        rigidBody.AddRelativeForce(Vector3.up * primaryThrust * Time.deltaTime);
         if (!thrusterAudio.isPlaying)
         {
             thrusterAudio.PlayOneShot(mainEngineSound);

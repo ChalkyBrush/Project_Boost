@@ -544,7 +544,7 @@ PrefabInstance:
     - target: {fileID: 142212971796506337, guid: ec8f89e6f280c854280d43a0d0fbf86e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.1870637
+      value: 7.69
       objectReference: {fileID: 0}
     - target: {fileID: 142212971796506337, guid: ec8f89e6f280c854280d43a0d0fbf86e,
         type: 3}
@@ -929,6 +929,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec8f89e6f280c854280d43a0d0fbf86e, type: 3}
+--- !u!1 &1388868381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6936099282638588674, guid: ec8f89e6f280c854280d43a0d0fbf86e,
+    type: 3}
+  m_PrefabInstance: {fileID: 478223061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1388868382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388868381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e473b4f1f3cc3041b8c024db822c70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 0, y: 4, z: 0}
+  movementFactor: 0
+  period: 2
 --- !u!4 &1678105040 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 142212971796506337, guid: ec8f89e6f280c854280d43a0d0fbf86e,
@@ -1142,22 +1163,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1652142752882573877, guid: 13840e10cf808c948869eb42466937c7,
         type: 3}
-      propertyPath: rocketThrustParticle
-      value: 
-      objectReference: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
-        type: 3}
-    - target: {fileID: 1652142752882573877, guid: 13840e10cf808c948869eb42466937c7,
-        type: 3}
-      propertyPath: deathParticle
-      value: 
-      objectReference: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0,
-        type: 3}
-    - target: {fileID: 1652142752882573877, guid: 13840e10cf808c948869eb42466937c7,
-        type: 3}
-      propertyPath: successParticle
-      value: 
-      objectReference: {fileID: 198631066050499358, guid: 62198a3a5dbb64a4f9e1618929224faa,
-        type: 3}
+      propertyPath: primaryThrust
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 1652142752882573878, guid: 13840e10cf808c948869eb42466937c7,
         type: 3}
       propertyPath: m_Name
