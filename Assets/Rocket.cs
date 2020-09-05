@@ -22,6 +22,8 @@ public class Rocket : MonoBehaviour
     enum State { Alive, Dying, Transcending }
     [SerializeField] State state = State.Alive;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -124,11 +126,20 @@ public class Rocket : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (SceneManager.sceneCountInBuildSettings == (currentSceneIndex + 1))
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(currentSceneIndex + 1);
+        }
     }
 
     private void RestartLevel()
     {
-        SceneManager.LoadScene(0);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }
